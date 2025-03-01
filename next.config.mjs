@@ -22,6 +22,8 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  output: "export",  // <=== enables static exports
+  reactStrictMode: true,
 }
 
 mergeConfig(nextConfig, userConfig)
