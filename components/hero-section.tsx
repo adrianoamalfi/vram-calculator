@@ -15,7 +15,7 @@ export function HeroSection() {
           <div className="space-y-3">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
               <span className="bg-gradient-to-r from-primary via-primary to-primary/50 bg-clip-text text-transparent">
-                LLM VRAM Calculator
+                VRAM Calculator
               </span>
             </h1>
             <p className="mx-auto max-w-[700px] text-muted-foreground text-sm sm:text-base md:text-xl">

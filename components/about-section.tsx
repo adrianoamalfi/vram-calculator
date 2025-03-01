@@ -10,14 +10,14 @@ export function AboutSection() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Brain className="h-5 w-5 text-primary" />
-            About LLM VRAM Calculator
+            About VRAM Calculator
           </CardTitle>
           <CardDescription>Your trusted companion for LLM deployment planning</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="prose dark:prose-invert max-w-none">
             <p>
-              LLM VRAM Calculator was created to help AI researchers, engineers, and enthusiasts accurately estimate the
+              VRAM Calculator was created to help AI researchers, engineers, and enthusiasts accurately estimate the
               video memory requirements for running Large Language Models. As LLMs continue to grow in size and
               complexity, understanding their resource requirements becomes increasingly important for efficient
               deployment.
@@ -60,7 +60,7 @@ export function AboutSection() {
                 <p className="text-muted-foreground mb-2">Project Creator & Maintainer</p>
                 <p>
                   AI researcher and developer passionate about making advanced technologies accessible to everyone.
-                  Created LLM VRAM Calculator to help others navigate the complex world of LLM deployment.
+                  Created VRAM Calculator to help others navigate the complex world of LLM deployment.
                 </p>
               </div>
             </div>
