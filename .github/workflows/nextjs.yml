@@ -84,32 +84,43 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
-      # Se il branch è "main", carica l'output così com'è
-      - name: Upload artifact for production
-        if: github.ref == 'refs/heads/main'
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-      # Se il branch è "develop", copia l'output in una cartella "staging"
-      - name: Prepare staging folder
-        if: github.ref == 'refs/heads/develop'
+     # Prepara l'artifact: per il branch develop copia in una sottocartella "staging"
+      - name: Prepare artifact
         run: |
-          mkdir -p tmp_out/staging
-          cp -r out/* tmp_out/staging/
-      - name: Upload artifact for staging
-        if: github.ref == 'refs/heads/develop'
+          BRANCH=${GITHUB_REF##*/}
+          if [ "$BRANCH" == "main" ]; then
+            cp -r out artifact
+          else
+            mkdir -p artifact/staging
+            cp -r out/* artifact/staging/
+          fi
+
+      - name: Upload artifact
+        id: upload_artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./tmp_out
+          path: ./artifact
 
-  # Deployment job
-  deploy:
+  deploy-production:
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages Production
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  deploy-staging:
+    if: github.ref == 'refs/heads/develop'
+    environment:
+      name: github-pages-staging
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages Staging
         id: deployment
         uses: actions/deploy-pages@v4
