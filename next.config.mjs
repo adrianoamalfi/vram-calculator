@@ -1,9 +1,14 @@
-let userConfig = undefined
+// Prova a importare eventuali override da next-user.config
+let userConfig = undefined;
 try {
-  userConfig = await import('./v0-user-next.config')
+  userConfig = await import('./next-user.config');
 } catch (e) {
-  // ignore error
+  // ignora l'errore se il file non esiste
 }
+
+// Determina l'ambiente in base alla variabile d'ambiente
+const isStaging = process.env.NEXT_PUBLIC_ENV === 'staging';
+const basePath = isStaging ? '/vram-calculator/staging' : '/vram-calculator';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -21,28 +26,28 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-}
+  // Impostazioni per i percorsi base in funzione dell'ambiente:
+  basePath,
+  assetPrefix: `${basePath}/`,
+};
 
-mergeConfig(nextConfig, userConfig)
+// Unione della configurazione utente (se presente)
+mergeConfig(nextConfig, userConfig);
 
 function mergeConfig(nextConfig, userConfig) {
   if (!userConfig) {
-    return
+    return;
   }
-
   for (const key in userConfig) {
-    if (
-      typeof nextConfig[key] === 'object' &&
-      !Array.isArray(nextConfig[key])
-    ) {
+    if (typeof nextConfig[key] === 'object' && !Array.isArray(nextConfig[key])) {
       nextConfig[key] = {
         ...nextConfig[key],
         ...userConfig[key],
-      }
+      };
     } else {
-      nextConfig[key] = userConfig[key]
+      nextConfig[key] = userConfig[key];
     }
   }
 }
 
-export default nextConfig
+export default nextConfig;
