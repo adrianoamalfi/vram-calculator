@@ -1,0 +1,47 @@
+{
+  "commonModels": [
+    { "name": "Llama 3.2 (1B)", "params": 1, "context": 2048 },
+    { "name": "Moondream 2", "params": 1.4, "context": 2048 },
+    { "name": "Gemma 2 (2B)", "params": 2, "context": 2048 },
+    { "name": "Llama 3.2 (3B)", "params": 3, "context": 2048 },
+    { "name": "Phi 3 Mini", "params": 3.8, "context": 2048 },
+    { "name": "Code Llama", "params": 7, "context": 4096 },
+    { "name": "DeepSeek-R1", "params": 7, "context": 4096 },
+    { "name": "LLaVA", "params": 7, "context": 4096 },
+    { "name": "Llama 2 Uncensored", "params": 7, "context": 4096 },
+    { "name": "Mistral", "params": 7, "context": 8192 },
+    { "name": "Neural Chat", "params": 7, "context": 4096 },
+    { "name": "Starling", "params": 7, "context": 4096 },
+    { "name": "Llama 3.1", "params": 8, "context": 4096 },
+    { "name": "Gemma 2 (9B)", "params": 9, "context": 4096 },
+    { "name": "Solar", "params": 10.7, "context": 4096 },
+    { "name": "Llama 3.2 Vision", "params": 11, "context": 4096 },
+    { "name": "Phi 4", "params": 14, "context": 2048 },
+    { "name": "Gemma 2 (27B)", "params": 27, "context": 4096 },
+    { "name": "Llama 3.3", "params": 70, "context": 4096 },
+    { "name": "Llama 3.2 Vision (90B)", "params": 90, "context": 8192 },
+    { "name": "Llama 3.1 (405B)", "params": 405, "context": 4096 },
+    { "name": "DeepSeek-R1 (671B)", "params": 671, "context": 4096 }
+  ],
+  "gpuModels": [
+    { "name": "NVIDIA RTX 3060", "vram": 12 },
+    { "name": "NVIDIA RTX 4060", "vram": 8 },
+    { "name": "NVIDIA RTX 4070", "vram": 12 },
+    { "name": "NVIDIA RTX 4080", "vram": 16 },
+    { "name": "NVIDIA RTX 4090", "vram": 24 },
+    { "name": "NVIDIA RTX 5090", "vram": 32 },
+    { "name": "NVIDIA A100", "vram": 40 },
+    { "name": "NVIDIA A100 80GB", "vram": 80 },
+    { "name": "NVIDIA H100", "vram": 80 },
+    { "name": "NVIDIA L40", "vram": 48 },
+    { "name": "AMD MI250X", "vram": 128 },
+    { "name": "AMD MI300X", "vram": 192 },
+    { "name": "NVIDIA Tesla K80", "vram": 12 },
+    { "name": "NVIDIA Tesla T4", "vram": 16 },
+    { "name": "NVIDIA Tesla P100", "vram": 16 },
+    { "name": "NVIDIA Tesla V100", "vram": 16 },
+    { "name": "Google TPU v2", "vram": 8 },
+    { "name": "Google TPU v3", "vram": 16 }
+  ]
+}
+
