@@ -1,9 +1,10 @@
 let userConfig = undefined
 try {
-  userConfig = await import('./v0-user-next.config')
+  userConfig = await import('./next-user.config')
 } catch (e) {
   // ignore error
 }
+
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -21,6 +22,8 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  output: "export",  // <=== enables static exports
+  reactStrictMode: true,
 }
 
 mergeConfig(nextConfig, userConfig)

@@ -15,8 +15,8 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   metadataBase: new URL("https://llm.adrianoamalfi.com"),
   title: {
-    default: "LLM VRAM Calculator | Estimate Memory Requirements for Large Language Models",
-    template: "%s | LLM VRAM Calculator",
+    default: "VRAM Calculator | Estimate Memory Requirements for Large Language Models",
+    template: "%s | VRAM Calculator",
   },
   description:
     "Calculate the VRAM needed to run Large Language Models (LLMs) based on model size, precision, and context length. Find compatible GPUs for your AI projects.",
@@ -37,22 +37,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://llm.adrianoamalfi.com",
-    title: "LLM VRAM Calculator | Memory Requirements for Large Language Models",
+    title: "VRAM Calculator | Memory Requirements for Large Language Models",
     description:
       "Calculate the VRAM needed to run Large Language Models (LLMs) based on model size, precision, and context length.",
-    siteName: "LLM VRAM Calculator",
+    siteName: "VRAM Calculator",
     images: [
       {
         url: "https://llm.adrianoamalfi.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "LLM VRAM Calculator",
+        alt: "VRAM Calculator",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "LLM VRAM Calculator | Memory Requirements for Large Language Models",
+    title: "VRAM Calculator | Memory Requirements for Large Language Models",
     description:
       "Calculate the VRAM needed to run Large Language Models (LLMs) based on model size, precision, and context length.",
     images: ["https://llm.adrianoamalfi.com/og-image.png"],

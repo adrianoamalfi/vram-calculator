@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div className="flex flex-col items-center md:items-start gap-2">
           <div className="flex items-center gap-2">
             <MemoryStick className="h-5 w-5 text-primary" />
-            <span className="font-medium">LLM VRAM Calculator</span>
+            <span className="font-medium">VRAM Calculator</span>
           </div>
           <p className="text-sm text-muted-foreground text-center md:text-left">
             A free and open-source tool for estimating VRAM requirements for LLMs
@@ -57,7 +57,7 @@ export function SiteFooter() {
             </a>
           </Button>
           <p className="text-xs text-muted-foreground text-center md:text-right">
-            &copy; {new Date().getFullYear()} LLM VRAM Calculator. MIT License.
+            &copy; {new Date().getFullYear()} VRAM Calculator. MIT License.
           </p>
         </div>
       </div>
