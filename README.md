@@ -25,7 +25,7 @@ VRAM Calculator is a free and open-source tool designed to help researchers, dev
 2. Install the dependencies:
     ```sh
     cd vram-calculator
-    npm install
+    npm install --legacy-peer-deps
     ```
 
 ### Running the Application
@@ -53,11 +53,12 @@ We use GitHub issues to track public bugs. Report a bug by opening a new issue.
 We use GitHub Flow, so all code changes happen through pull requests. Here’s how to propose changes:
 
 1. Fork the repository and create your branch from `main`.
-2. If you’ve added code that should be tested, add tests.
-3. If you’ve changed APIs, update the documentation.
-4. Ensure the test suite passes.
-5. Ensure your code lints.
-6. Submit your pull request!
+2. Follow the branch naming convention: `feature/your-feature-name` or `bugfix/your-bugfix-name`.
+3. If you’ve added code that should be tested, add tests.
+4. If you’ve changed APIs, update the documentation.
+5. Ensure the test suite passes.
+6. Ensure your code lints.
+7. Submit your pull request!
 
 ### Code Style
 
@@ -83,6 +84,6 @@ Adriano Amalfi - [GitHub](https://github.com/adrianoamalfi)
 ## Links
 
 - GitHub Repository: [https://github.com/adrianoamalfi/vram-calculator](https://github.com/adrianoamalfi/vram-calculator)
-- Calculator URL: [https://adrianoamalfi.github.io/vram-calculator/](https://adrianoamalfi.github.io/vram-calculator/)
+- Calculator URL: [https://vram-calculator.vercel.app/](https://vram-calculator.vercel.app/)
 
 Thank you for your interest in contributing to VRAM Calculator!
