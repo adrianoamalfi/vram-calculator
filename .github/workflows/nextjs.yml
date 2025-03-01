@@ -7,7 +7,7 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main", "develop"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,15 +31,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Imposta NEXT_PUBLIC_ENV in base al branch
-      - name: Set NEXT_PUBLIC_ENV
-        run: |
-          BRANCH=${GITHUB_REF##*/}
-          if [ "$BRANCH" == "main" ]; then
-            echo "NEXT_PUBLIC_ENV=production" >> $GITHUB_ENV
-          else
-            echo "NEXT_PUBLIC_ENV=staging" >> $GITHUB_ENV
-          fi
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -84,53 +75,19 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
-     # Prepara l'artifact: per il branch develop copia in una sottocartella "staging"
-      - name: Prepare artifact
-        run: |
-          BRANCH=${GITHUB_REF##*/}
-          if [ "$BRANCH" == "main" ]; then
-            cp -r out artifact
-          else
-            mkdir -p artifact/staging
-            cp -r out/* artifact/staging/
-          fi
-
       - name: Upload artifact
-        id: upload_artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./artifact
-          
-  deploy-production:
-    if: github.ref == 'refs/heads/main'
+          path: ./out
+
+  # Deployment job
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages Production
+      - name: Deploy to GitHub Pages
         id: deployment
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: artifact
-          destination_dir: '.'  # deploy in root
-          keep_files: true      # conserva gli altri file (ad es. /staging)
-
-  deploy-staging:
-    if: github.ref == 'refs/heads/develop'
-    environment:
-      name: github-pages-staging
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages Staging
-        id: deployment
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: artifact
-          destination_dir: 'staging'  # deploy in cartella "staging"
-          keep_files: true           # conserva gli altri file (ad es. la root di produzione)
+        uses: actions/deploy-pages@v4
