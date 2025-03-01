@@ -1,6 +1,6 @@
 {
   "name": "vram-calculator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -78,7 +78,7 @@
     "typescript": "^5",
     "gh-pages": "^5.0.0"
   },
-  "homepage": "https://adrianoamalfi.github.io/vram-calculator",
+  "homepage": "https://vram-calculator.vercel.app",
   "eslintConfig": {
     "extends": ["next/core-web-vitals"]
   }

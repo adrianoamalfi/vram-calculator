@@ -43,7 +43,7 @@ export function SiteHeader() {
             </a>
           </Button>
           <Button variant="default" size="sm" asChild>
-            <a href="https://github.com/adrianoamalfi/LLM-VRAM-Calculator" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/adrianoamalfi/vram-calculator" target="_blank" rel="noopener noreferrer">
               <Github className="mr-2 h-4 w-4" />
               Contribute
             </a>
@@ -80,7 +80,7 @@ export function SiteHeader() {
               </a>
             </Button>
             <Button variant="default" size="sm" asChild className="justify-start">
-              <a href="https://github.com/adrianoamalfi/LLM-VRAM-Calculator" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/adrianoamalfi/vram-calculator" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-4 w-4" />
                 Contribute
               </a>

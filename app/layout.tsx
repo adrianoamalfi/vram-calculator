@@ -13,7 +13,7 @@ import Script from "next/script"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://llm.adrianoamalfi.com"),
+  metadataBase: new URL("https://vram-calculator.vercel.app"),
   title: {
     default: "VRAM Calculator | Estimate Memory Requirements for Large Language Models",
     template: "%s | VRAM Calculator",
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://llm.adrianoamalfi.com",
+    url: "https://vram-calculator.vercel.app",
     title: "VRAM Calculator | Memory Requirements for Large Language Models",
     description:
       "Calculate the VRAM needed to run Large Language Models (LLMs) based on model size, precision, and context length.",
     siteName: "VRAM Calculator",
     images: [
       {
-        url: "https://llm.adrianoamalfi.com/og-image.png",
+        url: "https://vram-calculator.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "VRAM Calculator",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "VRAM Calculator | Memory Requirements for Large Language Models",
     description:
       "Calculate the VRAM needed to run Large Language Models (LLMs) based on model size, precision, and context length.",
-    images: ["https://llm.adrianoamalfi.com/og-image.png"],
+    images: ["https://vram-calculator.vercel.app/og-image.png"],
     creator: "@adrianoamalfi",
   },
   icons: {
