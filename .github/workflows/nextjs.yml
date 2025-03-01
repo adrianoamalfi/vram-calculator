@@ -100,7 +100,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./artifact
-
+          
   deploy-production:
     if: github.ref == 'refs/heads/main'
     environment:
@@ -111,7 +111,12 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages Production
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: artifact
+          destination_dir: '.'  # deploy in root
+          keep_files: true      # conserva gli altri file (ad es. /staging)
 
   deploy-staging:
     if: github.ref == 'refs/heads/develop'
@@ -123,4 +128,9 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages Staging
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: artifact
+          destination_dir: 'staging'  # deploy in cartella "staging"
+          keep_files: true           # conserva gli altri file (ad es. la root di produzione)
