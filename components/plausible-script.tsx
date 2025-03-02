@@ -26,7 +26,7 @@ export function PlausibleScript() {
   return (
     <Script
       defer
-      data-domain="vram-calculator.adrianoamalfi.com"
+      data-domain="vram-calculator.vercel.app"
       src="https://stats.adrianoamalfi.com/js/script.js"
       strategy="afterInteractive"
     />

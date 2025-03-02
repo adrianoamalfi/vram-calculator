@@ -39,7 +39,7 @@ export function HeroSection() {
               className="rounded-full border-primary/20 hover:bg-primary/10 w-full sm:w-auto"
               asChild
             >
-              <a href="https://github.com/adrianoamalfi/LLM-VRAM-Calculator" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/adrianoamalfi/vram-calculator" target="_blank" rel="noopener noreferrer">
                 View on GitHub
               </a>
             </Button>

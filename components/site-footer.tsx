@@ -23,13 +23,13 @@ export function SiteFooter() {
               About
             </Link>
             <Link
-              href="https://github.com/adrianoamalfi/LLM-VRAM-Calculator"
+              href="https://github.com/adrianoamalfi/vram-calculator"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               GitHub
             </Link>
             <Link
-              href="https://github.com/adrianoamalfi/LLM-VRAM-Calculator/issues"
+              href="https://github.com/adrianoamalfi/vram-calculator/issues"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               Report an Issue
@@ -51,7 +51,7 @@ export function SiteFooter() {
 
         <div className="flex flex-col items-center md:items-end gap-4">
           <Button variant="outline" size="sm" asChild className="w-full md:w-auto">
-            <a href="https://github.com/adrianoamalfi/LLM-VRAM-Calculator" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/adrianoamalfi/vram-calculator" target="_blank" rel="noopener noreferrer">
               <Github className="mr-2 h-4 w-4" />
               Contribute on GitHub
             </a>

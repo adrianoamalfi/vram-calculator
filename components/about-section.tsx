@@ -88,7 +88,7 @@ export function AboutSection() {
                 </p>
                 <Button asChild>
                   <a
-                    href="https://github.com/adrianoamalfi/LLM-VRAM-Calculator"
+                    href="https://github.com/adrianoamalfi/vram-calculator"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
