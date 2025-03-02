@@ -1,6 +1,6 @@
 {
   "name": "vram-calculator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
